@@ -11,8 +11,7 @@ class Topic(models.Model):
 
 
 class Entry(models.Model):
-    topic_id = models.ForeignKey(Topic, on_delete=models.CASCADE)
-    #topic = Topic.title
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
     date_added = models.DateTimeField(auto_now_add=True)
     text = models.TextField()
 
@@ -21,6 +20,19 @@ class Entry(models.Model):
 
     def __str__(self):
         return f"{self.text[:50]}..."
+
+
+class Link(models.Model):
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    date_added = models.DateTimeField(auto_now_add=True)
+    link = models.TextField()
+    comment = models.TextField()
+
+    def __str__(self):
+        if len(self.link)<= 100:
+            return f"{self.link[:100]}"
+        else:
+            return f"{self.link[:100]}..."
 
 
 

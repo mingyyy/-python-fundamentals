@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+
+    {% block content %}
+        <h3>List of Useful links</h3>
+
+        <ol>
+            {% for topic, links in topics.items %}
+            <li>{{topic}}
+                 <ul>
+                    {% for link in links %}
+                    <li> {{link}} </li>
+                     {% empty %}
+                     <li>No link yet for this topic.</li>
+                    {% endfor %}
+                </ul>
+
+            </li>
+            {% endfor %}
+        </ol>
+
+    {% endblock%}

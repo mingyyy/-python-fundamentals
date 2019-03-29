@@ -1,0 +1,74 @@
+{% load static from staticfiles %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}"
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Logs</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static '/bootstrap/css/mybootstrap.css' %}" />
+</head>
+<body>
+
+    <img src="{% static 'DJI_0268.jpg' %}" alt="Nusa Penida",  style="width:900px; height:200px">
+
+    <h1>CodingNomads - Bali 2019</h1>
+
+    <div class = "bs-component">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="{% url 'logs:index' %}">Index</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="{% url 'logs:topics' %}">Topics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="{% url 'logs:resources' %}">Links</a>
+        </li>
+
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="{% url 'users:logout' %}">Log out</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" color="black" ><strong>Hello, {{user.username}}!</strong></a>
+          </li>
+
+          {% else %}
+          <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="{% url 'users:register' %}">Register</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="{% url 'users:login' %}">Log in</a>
+          </li>
+          {% endif %}
+
+      </ul>
+
+    </div>
+
+    <div class = "bs-component">
+    <div class = "alert alert-dismissible alert-primary">
+        This is the learning log for the python class. During this 8-week bookcamp,
+        we have learned from lectures, activities, each other and above all from our own mistakes.
+    </div>
+    </div>
+
+
+    {% block content %}
+
+    {% endblock%}
+
+
+    {% block footer%}
+         <foot>Copyright @2019 MingY</foot>
+    {% endblock%}
+
+</body>
+</html>

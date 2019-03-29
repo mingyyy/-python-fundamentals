@@ -1,0 +1,13 @@
+{% extends "base.html"%}
+
+    {% block content %}
+        <h3>Structure of this site</h3>
+        <ul>
+            <li>Current page - Index</li>
+            <li><a href="{% url 'logs:topics' %}">List of Topics</a></li>
+            <li>Add New Topics</li>
+            <li>Add New Entries</li>
+            <li><a href="{% url 'logs:resources' %}">List of Useful Links</a></li>
+        </ul>
+
+    {% endblock%}
