@@ -128,10 +128,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    "/Users/Ming/Documents/CodingNomads/projects/learning_log/logs/static",
+# STATICFILES_DIRS = [
+#     "/Users/Ming/Documents/CodingNomads/projects/learning_log/logs/static",]
 
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 # https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/cerulean/bootstrap.css
 # https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css
 BOOTSTRAP3 = {'theme_url': 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.7.7/litera/bootstrap.css',}
