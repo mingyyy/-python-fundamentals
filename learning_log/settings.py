@@ -152,7 +152,7 @@ STATICFILES_DIRS = (
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStor'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStor'
 
 
 # https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/cerulean/bootstrap.css
