@@ -61,7 +61,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'learning_log.urls'
-
+# My settings
+LOGIN_URL = '/users/login/'
 
 TEMPLATES = [
     {
@@ -141,19 +142,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 # Static asset configuration
-# My settings
-LOGIN_URL = '/users/login/'
+
 
 STATIC_ROOT =  os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'logs/static'),)
 
-# Extra places for collectstatic to find static files.
-
-
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
 
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStor'
 
