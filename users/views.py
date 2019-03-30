@@ -5,6 +5,7 @@ from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 
 
+
 # Create your views here.
 def logout_view(request):
     '''log the user out.'''

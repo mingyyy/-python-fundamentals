@@ -1,13 +1,22 @@
+
+
 {% extends "base.html"%}
 
     {% block content %}
-        <h3>Structure of this site</h3>
+        <h3>Welcome to the learning log homepage!</h3>
+        <p>This is what you can do here. Please note that this site is still under construction. Do come back for more
+        later on.... Thank you!</p>
         <ul>
-            <li>Current page - Index</li>
-            <li><a href="{% url 'logs:topics' %}">List of Topics</a></li>
-            <li>Add New Topics</li>
-            <li>Add New Entries</li>
-            <li><a href="{% url 'logs:resources' %}">List of Useful Links</a></li>
+            <li>Register an account with your name and password</li>
+            <li>Log in to your account</li>
+            <li>Going to the <a href="{% url 'logs:topics' %}">List of Topics</a></li>
+            <li>You can also enter topics of your choice</li>
+            <li>And add entries under your topics</li>
+            <li>Here are some useful <a href="{% url 'logs:resources' %}">Links</a> here too.</li>
+
         </ul>
+
+        <span class="badge badge-info">User experience is very important for us. Please send us your feedback.</span>
+        <br>
 
     {% endblock%}
