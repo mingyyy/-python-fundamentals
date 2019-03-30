@@ -15,3 +15,15 @@ class EntryForm(forms.ModelForm):
         lables  = {'text':''}
         widgets = {'text': forms.Textarea(attrs={'cols': 80})}
         # customes the input widget for field "text", default is 40
+
+
+class DeleteEntryForm(forms.ModelForm):
+    class Meta:
+        model = Entry
+        fields = []
+
+
+class DeleteTopicForm(forms.ModelForm):
+    class Meta:
+        model = Topic
+        fields = []

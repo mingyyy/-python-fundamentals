@@ -1,11 +1,13 @@
 {% extends "base.html"%}
 
     {% block content %}
-        <p>Topic: {{topic}}</p>
-        <p>Entries:</p>
-        <p>
-            <a href="{% url 'logs:new_entry' topic.id %}">Add New Entry</a>
+        <p>Topic: {{topic}}                         -
+            <a href="{% url 'logs:edit_topic' topic.id %}">Edit Topic</a>
+                  -
+            <a href="{% url 'logs:delete_topic' topic.id %}">Delete Topic</a>
         </p>
+        <p>Entries:</p>
+        <p><a href="{% url 'logs:new_entry' topic.id %}">Add New Entry</a></p>
         <ul>
             {% for entry in entries%}
                 <li>
@@ -13,6 +15,8 @@
                     <p>{{ entry.text|linebreaks}}</p>
                     <p>
                         <a href="{% url 'logs:edit_entry' entry.id %}">Edit Entry</a>
+                         -
+                        <a href="{% url 'logs:delete_entry' entry.id %}">Delete Entry</a>
                     </p>
                 </li>
             {% empty%}
