@@ -147,7 +147,7 @@ USE_TZ = True
 STATIC_ROOT =  os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'logs/static'),)
+    os.path.join(BASE_DIR, 'static'),)
 
 
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStor'
@@ -155,6 +155,6 @@ STATICFILES_DIRS = (
 
 # https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/cerulean/bootstrap.css
 # https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css
-BOOTSTRAP3 = {'theme_url': 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.7.7/litera/bootstrap.css',}
+#BOOTSTRAP3 = {'theme_url': 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.7.7/litera/bootstrap.css',}
 
 django_heroku.settings(locals())
