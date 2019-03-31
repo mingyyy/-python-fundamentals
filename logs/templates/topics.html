@@ -2,8 +2,9 @@
 
     {% block content %}
         <button name = "Add new topic"><a href="{% url 'logs:new_topic' %}">Add New Topic</a></button>
+        <br><br>
 
-        <h3>List of Topics</h3>
+        <h4>List of Topics</h4>
         <ol>
             {% for topic in topics %}
             <li>

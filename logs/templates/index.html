@@ -3,20 +3,20 @@
 {% extends "base.html"%}
 
     {% block content %}
-        <h3>Welcome to the learning log homepage!</h3>
-        <p>This is what you can do here. Please note that this site is still under construction. Do come back for more
+        <h3>Welcome to the world of knowledge!</h3>
+        <p>Here is what you can do here. Please note that this site is still under construction. Do come back for more
         later on.... Thank you!</p>
         <ul>
-            <li>Register an account with your name and password</li>
-            <li>Log in to your account</li>
+            <li>Register an account with a username and password</li>
+            <li>Log in to your account if you have one</li>
             <li>Going to the <a href="{% url 'logs:topics' %}">List of Topics</a></li>
-            <li>You can also enter topics of your choice</li>
+            <li>You can enter topics of your choice</li>
             <li>And add entries under your topics</li>
             <li>Here are some useful <a href="{% url 'logs:resources' %}">Links</a> here too.</li>
 
         </ul>
 
-        <span class="badge badge-info">User experience is very important for us. Please send us your feedback.</span>
+        <span class="badge badge-info">User experience is very important. Please send me your feedback.</span>
         <br>
 
     {% endblock%}

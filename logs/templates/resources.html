@@ -5,16 +5,15 @@
 
         <ol>
             {% for topic, links in topics.items %}
-            <li>{{topic}}
-                 <ul>
-                    {% for link in links %}
-                    <li><a href="{{link}}"></a>{{link}} </li>
-                     {% empty %}
-                     <li>No link yet for this topic.</li>
-                    {% endfor %}
-                </ul>
-
-            </li>
+                {% for link in links %}
+                    <li>{{topic}}
+                         <ul>
+                            <li><a href="{{ link }}">{{link}}</a></li>
+                        </ul>
+                    </li>
+                {% empty %}
+                <!--<li>No link yet for this topic.</li>-->
+                {% endfor %}
             {% endfor %}
         </ol>
 
