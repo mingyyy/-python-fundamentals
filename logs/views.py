@@ -17,7 +17,7 @@ def index(request):
 
 @login_required
 def topics(request):
-    t = Topic.objects.order_by("title")
+    t = Topic.objects.filter(owner=request.user).order_by("title")
     context = {"topics": t}
     return render(request, "topics.html", context)
 
@@ -36,21 +36,24 @@ def resources(request):
 @login_required
 def topic(request, topic_id):
     '''show a single topic and all its entries'''
-    topic = Topic.objects.get(id=topic_id)
+    topic = Topic.objects.filter(owner=request.user).get(id=topic_id)
     entries = topic.entry_set.order_by('date_added')
-    context = {"topic":topic, "entries": entries}
-    return render(request,"topic.html", context )
+    context = {"topic": topic, "entries": entries}
+    return render(request,"topic.html", context)
 
 
 @login_required
 def new_topic(request):
     '''Add a new topic'''
+
     if request.method != 'POST':
         form = TopicForm()
     else:
-        form = TopicForm(request.POST)
+        form = TopicForm(request.POST, request.user)
         if form.is_valid():
-            form.save()
+            new_topic = form.save(commit=False)
+            new_topic.owner = request.user
+            new_topic.save()
             return HttpResponseRedirect(reverse('logs:topics'))
     context = {'form': form}
     return render(request, 'new_topic.html', context)

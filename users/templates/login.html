@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <h5>You have to login first if you want to look at topics and entries.</h5>
+    <br>
     {% if form.errors %}
     <p>Your username and password didn't match. Please try again.</p>
     {% endif %}

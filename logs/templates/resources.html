@@ -8,7 +8,7 @@
             <li>{{topic}}
                  <ul>
                     {% for link in links %}
-                    <li> {{link}} </li>
+                    <li><a href="{{link}}"></a>{{link}} </li>
                      {% empty %}
                      <li>No link yet for this topic.</li>
                     {% endfor %}
