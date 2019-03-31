@@ -149,7 +149,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),)
 
 
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStor'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStor'
 
 
 # https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/cerulean/bootstrap.css
